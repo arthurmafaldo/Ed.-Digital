@@ -1,4 +1,4 @@
-* {
+** {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -7,7 +7,7 @@
 html, body {
   background-color: #01170d;
   color: #ffffff;
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-family: 'Segoe UI', system-ui, sans-serif;
   overflow-x: hidden;
   width: 100%;
 }
@@ -19,38 +19,31 @@ img {
 }
 
 /* CABEÇALHO E RODAPÉ */
-.header-site,
-.footer-site {
+.header-site, .footer-site {
   width: 100%;
-  margin: 0;
-  padding: 0;
-  line-height: 0;
 }
 
-.img-header,
-.img-footer {
+.img-header, .img-footer {
   width: 100%;
-  height: auto;
 }
 
-/* ÁREA DE CONTEÚDO */
+/* ÁREA CENTRAL (Sem margens negativas) */
 .conteudo {
-  max-width: 1280px;
-  margin: -40px auto 0 auto; /* Puxa o conteúdo para cima, colando no cabeçalho */
-  padding: 0 20px 20px 20px;
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 30px 20px;
 }
 
 .secao {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px; /* Mantém texto e imagens bem próximos */
-  margin-bottom: 10px;
+  gap: 40px;
+  margin-bottom: 40px;
 }
 
 .coluna-texto {
   flex: 1.1;
-  z-index: 2;
 }
 
 .coluna-imagem {
@@ -59,105 +52,69 @@ img {
   justify-content: center;
 }
 
-/* TIPOGRAFIA */
+/* TEXTOS */
 .tagline {
   color: #00e652;
   font-weight: 700;
-  font-size: 0.9rem;
-  letter-spacing: 1.2px;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
   display: block;
-  margin-bottom: 10px;
 }
 
-h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  line-height: 1.15;
-  margin-bottom: 15px;
+h1, h2 {
+  font-size: 2.2rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
 }
 
-h2 {
-  font-size: 2.5rem;
-  font-style: italic;
-  font-weight: 600;
-  line-height: 1.15;
-  margin-bottom: 15px;
-}
+h2 { font-style: italic; }
 
 p {
   color: #d1d5db;
-  font-size: 1.1rem;
-  line-height: 1.4;
-  margin-bottom: 6px;
+  font-size: 1rem;
+  margin-bottom: 8px;
 }
 
-/* CORREÇÃO DO BOTÃO DESCUBRA MAIS */
+/* BOTÃO DESCUBRA MAIS */
 .btn-link {
   display: inline-block;
-  margin-left: -35px; /* Compensa o espaço vazio do PNG */
-  margin-top: -10px;
+  margin-top: 10px;
 }
 
 .img-botao {
-  width: 380px; /* Aumentado para compensar a margem do arquivo */
-  max-width: none;
+  width: 180px;
 }
 
-/* CORREÇÃO DA ESTRELA E IMAGEM TECH */
+/* ESTRELA E IMAGEM TECH */
 .wrapper-tech {
   position: relative;
   width: 100%;
 }
 
-.img-tech {
-  width: 115%; /* Expande a foto no container */
-  max-width: none;
+.img-tech, .img-campo {
+  width: 100%;
 }
 
+/* Estrela menor para não tapar o drone */
 .img-estrela {
   position: absolute;
-  left: -80px; /* Move a estrela para sobrepor a imagem */
-  top: 45%;
+  left: -30px;
+  top: 50%;
   transform: translateY(-50%);
-  width: 260px; /* Aumenta a estrela */
-  z-index: 3;
-}
-
-/* CORREÇÃO DA IMAGEM CAMPO */
-.img-campo {
-  width: 110%;
-  max-width: none;
+  width: 100px;
+  z-index: 2;
 }
 
 /* AJUSTE PARA CELULAR */
-@media (max-width: 850px) {
-  .conteudo {
-    margin-top: 0;
-  }
-  
+@media (max-width: 800px) {
   .secao {
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
   }
-
-  .img-tech, .img-campo {
-    width: 100%;
-  }
-
+  
   .img-estrela {
-    left: -20px;
-    width: 140px;
-  }
-
-  .btn-link {
-    margin-left: 0;
-  }
-
-  .img-botao {
-    width: 220px;
-  }
-
-  h1, h2 {
-    font-size: 1.8rem;
+    left: -10px;
+    width: 70px;
   }
 }
