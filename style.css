@@ -5,27 +5,26 @@
 }
 
 html, body {
-  background-color: #01170d; /* Verde escuro do fundo exato */
+  background-color: #01170d;
   color: #ffffff;
   font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
   width: 100%;
 }
 
-/* Remove qualquer espaço em branco abaixo das imagens */
 img {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-/* Cabeçalho e Rodapé */
+/* CABEÇALHO E RODAPÉ */
 .header-site,
 .footer-site {
   width: 100%;
   margin: 0;
   padding: 0;
-  line-height: 0; /* Impede criação de scroll adicional no fim */
+  line-height: 0;
 }
 
 .img-header,
@@ -34,23 +33,24 @@ img {
   height: auto;
 }
 
-/* Container de Conteúdo */
+/* ÁREA DE CONTEÚDO */
 .conteudo {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 20px 20px 40px 20px;
+  max-width: 1280px;
+  margin: -40px auto 0 auto; /* Puxa o conteúdo para cima, colando no cabeçalho */
+  padding: 0 20px 20px 20px;
 }
 
 .secao {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 40px;
-  margin-bottom: 30px;
+  gap: 10px; /* Mantém texto e imagens bem próximos */
+  margin-bottom: 10px;
 }
 
 .coluna-texto {
   flex: 1.1;
+  z-index: 2;
 }
 
 .coluna-imagem {
@@ -59,82 +59,105 @@ img {
   justify-content: center;
 }
 
-/* Tipografia igual à imagem */
+/* TIPOGRAFIA */
 .tagline {
   color: #00e652;
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   letter-spacing: 1.2px;
   display: block;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 h1 {
-  font-size: 2.3rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  line-height: 1.18;
-  margin-bottom: 24px;
+  line-height: 1.15;
+  margin-bottom: 15px;
 }
 
 h2 {
-  font-size: 2.3rem;
+  font-size: 2.5rem;
   font-style: italic;
   font-weight: 600;
-  line-height: 1.18;
-  margin-bottom: 18px;
+  line-height: 1.15;
+  margin-bottom: 15px;
 }
 
 p {
   color: #d1d5db;
-  font-size: 1.05rem;
-  line-height: 1.45;
+  font-size: 1.1rem;
+  line-height: 1.4;
   margin-bottom: 6px;
 }
 
-/* Botão Descubra Mais */
+/* CORREÇÃO DO BOTÃO DESCUBRA MAIS */
 .btn-link {
   display: inline-block;
+  margin-left: -35px; /* Compensa o espaço vazio do PNG */
+  margin-top: -10px;
 }
 
 .img-botao {
-  width: 190px;
+  width: 380px; /* Aumentado para compensar a margem do arquivo */
+  max-width: none;
 }
 
-/* Sobreposição da Estrela + Imagem Tech */
+/* CORREÇÃO DA ESTRELA E IMAGEM TECH */
 .wrapper-tech {
   position: relative;
+  width: 100%;
 }
 
 .img-tech {
-  width: 100%;
+  width: 115%; /* Expande a foto no container */
+  max-width: none;
 }
 
 .img-estrela {
   position: absolute;
-  left: -45px;
+  left: -80px; /* Move a estrela para sobrepor a imagem */
   top: 45%;
   transform: translateY(-50%);
-  width: 130px;
-  z-index: 2;
+  width: 260px; /* Aumenta a estrela */
+  z-index: 3;
 }
 
+/* CORREÇÃO DA IMAGEM CAMPO */
 .img-campo {
-  width: 100%;
+  width: 110%;
+  max-width: none;
 }
 
-/* Ajustes para telas menores */
+/* AJUSTE PARA CELULAR */
 @media (max-width: 850px) {
+  .conteudo {
+    margin-top: 0;
+  }
+  
   .secao {
     flex-direction: column;
     gap: 20px;
   }
 
+  .img-tech, .img-campo {
+    width: 100%;
+  }
+
   .img-estrela {
-    left: -15px;
-    width: 90px;
+    left: -20px;
+    width: 140px;
+  }
+
+  .btn-link {
+    margin-left: 0;
+  }
+
+  .img-botao {
+    width: 220px;
   }
 
   h1, h2 {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
   }
 }
